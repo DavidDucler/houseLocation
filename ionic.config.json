@@ -1,7 +1,8 @@
 {
   "name": "houseLocation",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
