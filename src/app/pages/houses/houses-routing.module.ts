@@ -7,12 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: HousesPage,
-    children :[
-      {
-        path: 'house-detail',
-        loadChildren: () => import('./house-detail/house-detail.module').then( m => m.HouseDetailPageModule),
-      }
-      ]
   },
 
 ];

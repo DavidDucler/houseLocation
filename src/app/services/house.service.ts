@@ -91,10 +91,10 @@ export class HouseService {
     });
   }
 
-  getHouse(houseKey: number) {
+  getHouse(houseKey: string) {
     return {
       ...this.house.find(house => {
-        return house.key === houseKey;
+        return house.agentName === houseKey;
       })
     };
   }

@@ -15,7 +15,7 @@
 <ion-content>
 <ion-list>
   <ion-item *ngFor="let house of houses">
-    <ion-card color="lightblue">
+    <ion-card color="white">
      <img src="assets/images/house.jpg">
        <ion-card-header>
          <div>
@@ -40,7 +40,7 @@
         <hr>
         <h2>{{house.houseDescription}}</h2>
       <div class="ion-text-center">
-        <ion-button class="danger" [routerLink]=""> Voir +</ion-button>
+        <ion-button class="danger" (click)="houseDetail()"> Voir +</ion-button>
       </div>
       </ion-card-content>
     </ion-card>

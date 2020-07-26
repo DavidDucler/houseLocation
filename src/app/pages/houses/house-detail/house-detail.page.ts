@@ -12,7 +12,7 @@ export class HouseDetailPage implements OnInit {
   constructor(private houseService:HouseService) { }
 
   ngOnInit() {
-    this.houseService.getAllHouses();
+    this.loadedHouse=this.houseService.getHouse(this.loadedHouse.agentName);
   }
 
 }

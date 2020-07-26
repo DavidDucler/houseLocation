@@ -11,7 +11,13 @@ const routes: Routes = [
     children :[
       {
         path :'houses',
-        loadChildren: () => import('../houses/houses.module').then( m => m.HousesPageModule)
+        loadChildren: () => import('../houses/houses.module').then( m => m.HousesPageModule),
+        children :[
+          {
+            path :'house-detail',
+            loadChildren: () => import('../houses/house-detail/house-detail.module').then( m => m.HouseDetailPageModule),
+          }
+        ]
       },
       {
         path :'logout',
