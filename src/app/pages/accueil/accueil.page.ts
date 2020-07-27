@@ -9,11 +9,11 @@ import {Router, RouterEvent} from "@angular/router";
 export class AccueilPage implements OnInit {
   pages = [
     {
-      title :'Houses for rent',
+      title :'Maisons à Louer',
       url : '/accueil/houses',
     },
     {
-      title :'logout',
+      title :'Se deconnecter',
       url : '/accueil/logout',
     },
   ];

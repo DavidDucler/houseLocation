@@ -20,13 +20,13 @@ interface House {
 })
 export class NewHousePage implements OnInit {
   enterprise: Enterprise[]=[
-    {type: 'immobilier', viewType: 'Agent immobilier'},
-    {type: 'particulier', viewType: 'Particulier'},
+    {type: 'Agent immobilier', viewType: 'Agent immobilier'},
+    {type: 'Particulier', viewType: 'Particulier'},
   ];
   house : House[]= [
-    {typeHouse:'appart',viewTypeHouse:'Appartement'},
-    {typeHouse:'studio',viewTypeHouse:'Studio Moderne'},
-    {typeHouse:'chambre',viewTypeHouse:'Chambre Moderne'},
+    {typeHouse:'Appartement',viewTypeHouse:'Appartement'},
+    {typeHouse:'Studio moderne',viewTypeHouse:'Studio Moderne'},
+    {typeHouse:'Chambre moderne',viewTypeHouse:'Chambre Moderne'},
     {typeHouse:'villa',viewTypeHouse:'Villa'},
 
   ]
@@ -45,18 +45,15 @@ export class NewHousePage implements OnInit {
   }
 
    async onAddHouse(house:HouseModel) {
-    house.location={longitude:0,latitude:0};
-    this.geolocation.getCurrentPosition().then((resp) => {
-      house.location.longitude  = resp.coords.latitude;
-      house.location.latitude = resp.coords.longitude;
-      this.houseService.addHouse(house)
-      this.router.navigate(['/accueil/houses'])
-    }).catch((error) => {
-      console.log('Error getting location', error)
-      this.houseService.addHouse(house)
-      this.router.navigate(['/accueil/houses'])
-    });
-    console.log(house.location.longitude);
-
+     this.houseService.addHouse(house);
+     this.router.navigate(['/accueil/houses']);
+     house.location={longitude:0,latitude:0};
+     this.geolocation.getCurrentPosition().then((resp) => {
+       house.location.longitude  = resp.coords.latitude;
+       house.location.latitude = resp.coords.longitude;
+     }).catch((error) => {
+       console.log('Error getting location', error)
+     });
+     console.log(house.location.longitude);
   }
 }

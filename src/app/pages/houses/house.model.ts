@@ -1,5 +1,4 @@
 export class HouseModel {
-    key:number;
     agent: string;
     agentName: string;
     houseType: string;

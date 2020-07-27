@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Details de la Maison</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<mat-card style="height: 100%">
+  <mat-card-header>
+    <mat-card-title>Promotteur: {{house.agentName}}</mat-card-title>
+    <mat-card-subtitle>{{house.agent}}</mat-card-subtitle>
+  </mat-card-header>
+  <img src="assets/images/house.jpg">
+  <mat-card-content>
+    <div style="margin-bottom: 20px">{{house.houseDescription}}</div>
+    <mat-divider></mat-divider>
+    <div>
+      <div class="description">
+        <div><p>Type de Maison</p></div>
+        <div>{{house.houseType}}</div>
+      </div>
+    </div>
+    <div>
+      <div class="description">
+        <div><p>Ville</p></div>
+        <div>{{house.houseCity}}</div>
+      </div>
+    </div>
+    <div>
+      <div class="description">
+        <div><p>Prix Mensuel</p></div>
+        <div>{{house.monthlyPrice}} FCFA</div>
+      </div>
+    </div>
+    <div>
+      <div class="description">
+        <p>Chambres</p>
+        <p>{{house.houseDetail.numberOfRooms}}</p>
+      </div>
+      <div class="description">
+        <p>Salon</p>
+        <p>{{house.houseDetail.numberOfLiveRooms}}</p>
+      </div>
+      <div class="description">
+        <p>Douche</p>
+        <p>{{house.houseDetail.numberOfShowers}}</p>
+      </div>
+      <div class="description">
+        <p>Cuisine</p>
+        <p>{{house.houseDetail.numberOfKitchen}}</p>
+      </div>
+      <div class="description">
+        <p>Terrasse</p>
+        <p>{{house.houseDetail.numberOfTerrace}}</p>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button color="primary" mat-button> <mat-icon>thumb_up_alt</mat-icon></button>
+    <button color="warn" mat-button> <mat-icon>thumb_down_alt</mat-icon></button>
+    <button color="primary" mat-button align="end"> <mat-icon>share</mat-icon></button>
+  </mat-card-actions>
+  <div class="footer">
+    <button mat-button >Visiter</button>
+  </div>
+</mat-card>
+</ion-content>

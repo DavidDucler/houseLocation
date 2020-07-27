@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import {HouseModel} from "../pages/houses/house.model";
 import { Storage } from '@ionic/storage';
+import {NavParams} from "@ionic/angular";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class HouseService {
+  houseM:HouseModel;
   private house: HouseModel [] = [
     {
-      key: 1,
       agentName: 'Mr Hamadou',
       agent: 'Immobilier SA Cameroon',
       houseType: 'Appartement',
@@ -32,7 +33,6 @@ export class HouseService {
       }
     },
     {
-      key: 1,
       agentName: 'Mr Hamadou',
       agent: 'Immobilier SA Cameroon',
       houseType: 'Appartement',
@@ -55,7 +55,6 @@ export class HouseService {
       }
     },
     {
-      key: 1,
       agentName: 'Mr Hamadou',
       agent: 'Immobilier SA Cameroon',
       houseType: 'Studio Moderne',
@@ -77,8 +76,6 @@ export class HouseService {
         latitude: 40,
       }
     }
-
-
   ];
 
   constructor(private storage:Storage) {
@@ -91,10 +88,9 @@ export class HouseService {
     });
   }
 
-  getHouse(houseKey: string) {
-    return {
-      ...this.house.find(house => {
-        return house.agentName === houseKey;
+  getHouse(agentName:string) {
+    return {...this.house.find(house => {
+        return house.agentName === agentName;
       })
     };
   }

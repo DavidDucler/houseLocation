@@ -25,7 +25,8 @@ import {MatSortModule} from "@angular/material/sort";
         MatIconModule,
         MatSelectModule,
         MatOptionModule,
-        MatSortModule
+        MatSortModule,
+        MatIconModule
     ]
 })
 export class MaterialModule {

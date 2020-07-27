@@ -8,32 +8,30 @@ const routes: Routes = [
   {
     path: 'accueil',
     component: AccueilPage,
-    children :[
+    children: [
       {
-        path :'houses',
-        loadChildren: () => import('../houses/houses.module').then( m => m.HousesPageModule),
-        children :[
-          {
-            path :'house-detail',
-            loadChildren: () => import('../houses/house-detail/house-detail.module').then( m => m.HouseDetailPageModule),
-          }
-        ]
+        path: 'houses',
+        loadChildren: () => import('../houses/houses.module').then(m => m.HousesPageModule),
       },
       {
-        path :'logout',
-        loadChildren: () => import('../logout/logout.module').then( m => m.LogoutPageModule)
+        path: 'logout',
+        loadChildren: () => import('../logout/logout.module').then(m => m.LogoutPageModule)
       },
       {
         path: 'new-house',
-        loadChildren: () => import('../new-house/new-house.module').then( m => m.NewHousePageModule)
+        loadChildren: () => import('../new-house/new-house.module').then(m => m.NewHousePageModule)
       },
-
-    ],
+      {
+        path: 'house-detail',
+        loadChildren: () => import('../house-detail/house-detail.module').then( m => m.HouseDetailPageModule)
+      },
+    ]
   },
   {
     path :'',
     redirectTo :'/accueil/houses'
   }
+
 ];
 
 @NgModule({

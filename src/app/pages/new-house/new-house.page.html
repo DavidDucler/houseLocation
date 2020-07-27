@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
         <ion-back-button icon="arrow-back-outline"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Add new house</ion-title>
+    <ion-title class="ion-text-center">Ajouter une maison </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
 <form class="ion-text-center" #form="ngForm" (ngSubmit)="onAddHouse(form.value)">
     <div>
         <mat-form-field appearance="fill" style="width: 40%;margin-left: 10px;margin-right: 10px">
-            <mat-label>Agent Name</mat-label>
+            <mat-label>Promotteur</mat-label>
             <input matInput id="agentName" name="agentName" ngModel>
         </mat-form-field>
         <mat-form-field appearance="fill" style="width: 40%;margin-right: 10px">
@@ -26,11 +26,11 @@
     </div>
     <div >
         <mat-form-field appearance="fill" style="width: 40%;margin-left: 10px;margin-right: 10px">
-            <mat-label>Montly Price</mat-label>
+            <mat-label>Prix Mensuel</mat-label>
             <input matInput id="monthlyPrice" name="monthlyPrice" ngModel >
         </mat-form-field>
         <mat-form-field appearance="fill" style="width: 40%;margin-right: 10px">
-            <mat-label>houseType</mat-label>
+            <mat-label>type</mat-label>
             <mat-select ngModel id="houseType" name="houseType">
                 <mat-option *ngFor="let enter of house" [value]="enter.typeHouse">
                     {{enter.viewTypeHouse}}
@@ -41,10 +41,10 @@
 
     <div>
         <div>
-            <p class="ion-text-center"><strong>House Details</strong></p>
+            <p class="ion-text-center"><strong>Details de la Maison</strong></p>
             <div class="house">
             <mat-form-field appearance="fill" style="width: 40%;margin-left: 10px;">
-                <mat-label>numberOfRooms</mat-label>
+                <mat-label>Chambre</mat-label>
                 <mat-select [(value)]="room" id="room" ngModel name="room">
                     <mat-option value="option1">1</mat-option>
                     <mat-option value="option2">2</mat-option>
@@ -52,7 +52,7 @@
                 </mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill" style="width: 50%;margin-right: 10px;margin-left: 10px">
-                <mat-label>numberOfLiveRooms</mat-label>
+                <mat-label>Salon</mat-label>
                 <mat-select [(value)]="liveRoom" id="liveRoom" ngModel name="liveRoom">
                     <mat-option value="option1">1</mat-option>
                     <mat-option value="option2">2</mat-option>
@@ -63,7 +63,7 @@
         </div>
             <div class="house">
                 <mat-form-field appearance="fill" style="width: 40%;margin-left: 10px;">
-                    <mat-label>numberOfKitchen</mat-label>
+                    <mat-label>Cuisine</mat-label>
                     <mat-select [(value)]="kitchen" id="kitchen" name="kitchen" ngModel>
                         <mat-option value="option1">1</mat-option>
                         <mat-option value="option2">2</mat-option>
@@ -71,7 +71,7 @@
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="fill" style="width: 50%;margin-right: 10px;margin-left: 10px">
-                    <mat-label>numberOfShowers</mat-label>
+                    <mat-label>Douche</mat-label>
                     <mat-select [(value)]="shower" id="shower" name="shower" ngModel>
                         <mat-option value="option1">1</mat-option>
                         <mat-option value="option2">2</mat-option>
@@ -81,7 +81,7 @@
             </div>
         <div class="house">
             <mat-form-field appearance="fill" style="width: 40%;margin-left: 10px;">
-                <mat-label>numberOfDiningRooms</mat-label>
+                <mat-label>Salle à Manger</mat-label>
                 <mat-select [(value)]="diningRoom" name="diningRoom" id="dinigRoom" ngModel>
                     <mat-option value="option1">1</mat-option>
                     <mat-option value="option2">2</mat-option>
@@ -89,7 +89,7 @@
                 </mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill" style="width: 50%;margin-right: 10px;margin-left: 10px">
-                <mat-label>numberOfTerrace</mat-label>
+                <mat-label>Terasse</mat-label>
                 <mat-select [(value)]="terrace" ngModel id="terrace" name="terrace">
                     <mat-option value="option1">1</mat-option>
                     <mat-option value="option2">2</mat-option>
@@ -97,17 +97,28 @@
             </mat-form-field>
         </div>
     </div>
+    <div>
+        <mat-form-field appearance="fill" style="width: 40%;margin-left: 10px;margin-right: 10px">
+            <mat-label>Ville</mat-label>
+            <input matInput id="houseCity" name="houseCity" ngModel>
+        </mat-form-field>
+    </div>
     <p class="ion-text-center"><strong>Description</strong></p>
     <div>
         <mat-form-field style="width: 80%;margin: 0px 10px 10px 10px;">
             <mat-label>Description</mat-label>
-            <textarea matInput placeholder="This is a beautifull house" id="houseDescription"
+            <textarea matInput placeholder="Une Magnifique maison peint en " id="houseDescription"
                       name="houseDescription" ngModel></textarea>
         </mat-form-field>
     </div>
-    <div style="margin-top: 20px">
-        <button mat-flat-button color="warn"  (click)="form.onReset()" style="margin-right: 10px">Reset</button>
-        <button mat-flat-button color="primary" type="submit"> Click to Add</button>
+    <div style="margin-top: 20px;display: inline-flex">
+       <div >
+           <button mat-flat-button color="warn" type="reset" style="margin-right: 30px">Reset</button>
+       </div>
+        <div>
+            <button mat-flat-button color="primary" type="submit"> Click to Add</button>
+        </div>
+
     </div>
 </form>
     </div>

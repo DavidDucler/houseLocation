@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button ></ion-menu-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Houses for rent</ion-title>
+    <ion-title class="ion-text-center">Maisons Disponibles</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="onNewHouse()">
         <ion-icon slot="icon-only" name="add-outline"></ion-icon>
@@ -22,14 +22,14 @@
            <ion-card-title>{{house.agentName}}</ion-card-title>
          </div>
          <div class="price">
-           <ion-text><h3><strong>Monthly Price {{house.monthlyPrice}} FCFA </strong> </h3></ion-text>
+           <ion-text><h3><strong>Prix Mensuel {{house.monthlyPrice}} FCFA </strong> </h3></ion-text>
          </div>
 
            <div class="price">
              <div style="margin-right: 20px">
                <strong><h2>{{house.houseType}}</h2></strong>
              </div>
-             <div><u><h2>Located to  {{house.houseCity}}</h2></u></div>
+             <div><u><h2>Situé à  {{house.houseCity}}</h2></u></div>
            </div>
 
 
@@ -40,7 +40,7 @@
         <hr>
         <h2>{{house.houseDescription}}</h2>
       <div class="ion-text-center">
-        <ion-button class="danger" (click)="houseDetail()"> Voir +</ion-button>
+        <ion-button class="danger" (click)="houseDetail(house)"> Voir +</ion-button>
       </div>
       </ion-card-content>
     </ion-card>
