@@ -3,13 +3,18 @@
     <ion-buttons slot="start">
         <ion-back-button icon="arrow-back-outline"></ion-back-button>
     </ion-buttons>
+      <ion-buttons slot="end">
+          <ion-button (click)="addPhotoToGallery()">
+              <ion-icon slot="icon-only" name="camera-outline"></ion-icon>
+          </ion-button>
+      </ion-buttons>
     <ion-title class="ion-text-center">Ajouter une maison </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-    <div class="add-user">
-<form class="ion-text-center" #form="ngForm" (ngSubmit)="onAddHouse(form.value)">
+    <!--<div class="add-user">
+<form class="ion-text-center"[formGroup]="myForm" (ngSubmit)="onAddHouse(form.value)">
     <div>
         <mat-form-field appearance="fill" style="width: 40%;margin-left: 10px;margin-right: 10px">
             <mat-label>Promotteur</mat-label>
@@ -32,7 +37,7 @@
         <mat-form-field appearance="fill" style="width: 40%;margin-right: 10px">
             <mat-label>type</mat-label>
             <mat-select ngModel id="houseType" name="houseType">
-                <mat-option *ngFor="let enter of house" [value]="enter.typeHouse">
+                <mat-option *ngFor="let enter of houseTy" [value]="enter.typeHouse">
                     {{enter.viewTypeHouse}}
                 </mat-option>
             </mat-select>
@@ -53,7 +58,7 @@
             </mat-form-field>
             <mat-form-field appearance="fill" style="width: 50%;margin-right: 10px;margin-left: 10px">
                 <mat-label>Salon</mat-label>
-                <mat-select [(value)]="liveRoom" id="liveRoom" ngModel name="liveRoom">
+                <mat-select [(value)]="liveRoom1" id="liveRoom" ngModel name="liveRoom">
                     <mat-option value="option1">1</mat-option>
                     <mat-option value="option2">2</mat-option>
                     <mat-option value="option3">3</mat-option>
@@ -121,5 +126,92 @@
 
     </div>
 </form>
-    </div>
+    </div>-->
+    <form [formGroup]="myForm" class="add-user" (ngSubmit)="onAddHouse(myForm.value)" >
+        <div class="mat-form">
+            <mat-form-field appearance="fill" class="mat form-control" required >
+                <mat-label>Nom du prometteur</mat-label>
+                <input matInput placeholder="Votre nom" formControlName="agentName">
+            </mat-form-field>
+            <div style="width: 10px"></div>
+            <mat-form-field appearance="fill" class="mat form-control" required >
+                <mat-label>Statut</mat-label>
+                <mat-select formControlName="agent">
+                    <mat-option value="Agent Immobilier">Agent Immobilier</mat-option>
+                    <mat-option value="Particulier">particulier</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="mat-form">
+            <mat-form-field appearance="fill" class="mat form-control" >
+                <mat-label>Type de maison</mat-label>
+                <mat-select formControlName="houseType" >
+                    <mat-option value="Studio Moderne">Studio Moderne</mat-option>
+                    <mat-option value="Chambre Moderne">Chambre Moderne</mat-option>
+                    <mat-option value="Appartement">Appartement</mat-option>
+                    <mat-option value="Villa">Villa</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div style="width: 10px"></div>
+            <mat-form-field appearance="fill" class="mat form-control">
+                <mat-label>Prix Mensuel</mat-label>
+                <input matInput placeholder="prix" formControlName="monthlyPrice">
+            </mat-form-field>
+        </div>
+
+        <h4 class="ion-text-center">Details de la Maison</h4>
+        <div  id="house-detail">
+                <div class="mat-form">
+                    <mat-form-field appearance="fill" class="mat">
+                        <mat-label>Nombre de Chambres</mat-label>
+                        <input matInput placeholder="2" formControlName="numberOfRooms">
+                    </mat-form-field>
+                    <div style="width: 10px"></div>
+                    <mat-form-field appearance="fill" class="mat">
+                        <mat-label>Nombre de Salons</mat-label>
+                        <input matInput placeholder="1" formControlName="numberOfLiveRooms">
+                    </mat-form-field>
+                </div>
+            <div class="mat-form">
+                <mat-form-field appearance="fill" class="mat">
+                    <mat-label>Nombre de douches</mat-label>
+                    <input matInput placeholder="2" formControlName="numberOfShowers">
+                </mat-form-field>
+                <div style="width: 10px"></div>
+                <mat-form-field appearance="fill" class="mat">
+                    <mat-label>Nombre de Cuisines</mat-label>
+                    <input matInput placeholder="1" formControlName="numberOfKitchen">
+                </mat-form-field>
+            </div>
+            <div class="mat-form">
+                    <mat-form-field appearance="fill" class="mat">
+                        <mat-label>Nombre de Salle à Manger</mat-label>
+                        <input matInput placeholder="2" formControlName="numberOfDiningRoom">
+                    </mat-form-field>
+                <div style="width: 10px"></div>
+                    <mat-form-field appearance="fill" class="mat">
+                        <mat-label>Nombre de Terasse</mat-label>
+                        <input matInput placeholder="2" formControlName="numberOfTerrace">
+                    </mat-form-field>
+            </div>
+        </div>
+        <mat-form-field appearance="fill" style="width: 95%;margin-left: 10px;margin-right: 10px">
+            <mat-label>Brieve description de la maison</mat-label>
+            <textarea matInput formControlName="houseDescription" placeholder="Votre description"></textarea>
+        </mat-form-field>
+        <ion-grid>
+            <!--<ion-row>
+                <ion-col size="6"
+                         *ngFor="let photo of photos; index as position">
+                    <ion-img src="{{ photo.webviewPath }}"></ion-img>
+                </ion-col>
+            </ion-row>-->
+        </ion-grid>
+           <div style="display: flex;align-content: space-around;justify-content: center">
+               <button mat-flat-button color="warn" type="reset" style="width: 100px">Reset</button>
+               <div style="width: 10px"></div>
+               <button mat-flat-button color="primary" type="submit"> Click to Add</button>
+           </div>
+    </form>
+
 </ion-content>

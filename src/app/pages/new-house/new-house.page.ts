@@ -3,6 +3,8 @@ import {HouseModel} from "../houses/house.model";
 import {HouseService} from "../../services/house.service";
 import {Router} from "@angular/router";
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import {FormBuilder,FormGroup,ValidatorFn,Validators} from "@angular/forms";
+import {PhotoService} from "../../services/photo.service";
 
 interface Enterprise {
   type:string;
@@ -23,28 +25,44 @@ export class NewHousePage implements OnInit {
     {type: 'Agent immobilier', viewType: 'Agent immobilier'},
     {type: 'Particulier', viewType: 'Particulier'},
   ];
-  house : House[]= [
+  houseTy : House[]= [
     {typeHouse:'Appartement',viewTypeHouse:'Appartement'},
     {typeHouse:'Studio moderne',viewTypeHouse:'Studio Moderne'},
     {typeHouse:'Chambre moderne',viewTypeHouse:'Chambre Moderne'},
     {typeHouse:'villa',viewTypeHouse:'Villa'},
 
   ]
-  kitchen: '';
-  shower: '';
-  diningRoom: '';
-  terrace: '';
-  room: '';
-  liveRoom: '';
+
 
       constructor(private houseService:HouseService,
                   private router:Router,
-                 private geolocation:Geolocation) { }
+                 private geolocation:Geolocation,
+                  private fb:FormBuilder,
+                  private photoService:PhotoService) { }
+                  myForm:FormGroup;
+                  house:HouseModel;
+                  photo = this.photoService.photo;
 
   ngOnInit() {
+    this.myForm = this.fb.group({
+        agent:'',
+        agentName:'',
+        houseType: '',
+        monthlyPrice:'',
+        houseCity: '',
+        numberOfRooms: '',
+        numberOfLiveRooms: '',
+        numberOfShowers : '',
+        numberOfKitchen :'',
+        numberOfDiningRoom : '',
+        numberOfTerrace:'',
+        houseDescription:'',
+
+    });
+    this.myForm.valueChanges.subscribe(console.log)
   }
 
-   async onAddHouse(house:HouseModel) {
+    onAddHouse(house:HouseModel) {
      this.houseService.addHouse(house);
      this.router.navigate(['/accueil/houses']);
      house.location={longitude:0,latitude:0};
@@ -56,4 +74,8 @@ export class NewHousePage implements OnInit {
      });
      console.log(house.location.longitude);
   }
+
+    addPhotoToGallery() {
+       // this.photoService.addNewToGallery();
+    }
 }

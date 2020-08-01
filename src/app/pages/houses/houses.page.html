@@ -15,35 +15,22 @@
 <ion-content>
 <ion-list>
   <ion-item *ngFor="let house of houses">
-    <ion-card color="white">
+    <mat-card >
      <img src="assets/images/house.jpg">
-       <ion-card-header>
-         <div>
-           <ion-card-title>{{house.agentName}}</ion-card-title>
-         </div>
-         <div class="price">
-           <ion-text><h3><strong>Prix Mensuel {{house.monthlyPrice}} FCFA </strong> </h3></ion-text>
-         </div>
-
-           <div class="price">
-             <div style="margin-right: 20px">
-               <strong><h2>{{house.houseType}}</h2></strong>
-             </div>
-             <div><u><h2>Situé à  {{house.houseCity}}</h2></u></div>
-           </div>
-
-
-
-       </ion-card-header>
-      <ion-card-content>
-        <h3>Description</h3>
-        <hr>
+       <mat-card-header>
+           <mat-card-title>{{house.houseType}}</mat-card-title>
+           <p><strong>Prix Mensuel {{house.monthlyPrice}} FCFA </strong></p>
+         <mat-card-subtitle>
+             <h2><strong>{{house.houseCity}}</strong></h2>
+         </mat-card-subtitle>
+       </mat-card-header>
+      <mat-card-content>
         <h2>{{house.houseDescription}}</h2>
       <div class="ion-text-center">
         <ion-button class="danger" (click)="houseDetail(house)"> Voir +</ion-button>
       </div>
-      </ion-card-content>
-    </ion-card>
+      </mat-card-content>
+    </mat-card>
   </ion-item>
 </ion-list>
 </ion-content>

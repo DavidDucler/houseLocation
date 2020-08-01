@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HouseModel} from "../houses/house.model";
-import {ActivatedRoute, Router} from "@angular/router";
-import {HouseService} from "../../services/house.service";
+import {ActivatedRoute} from "@angular/router";
 
 
 
@@ -13,8 +12,8 @@ import {HouseService} from "../../services/house.service";
 })
 export class HouseDetailPage implements OnInit {
 house:HouseModel;
-  constructor(private activatedRoute:ActivatedRoute,private router: Router,
-              private houseService: HouseService) {}
+  constructor(private activatedRoute:ActivatedRoute,
+             ) {}
 
   ngOnInit() {
     /*this.activatedRoute.params.subscribe(paramMap => {
@@ -27,7 +26,7 @@ house:HouseModel;
     });*/
    this.activatedRoute.queryParams.subscribe(params => {
       this.house = JSON.parse(params["house"]);
-     console.log(this.house.agentName);
+      console.log(this.house);
     });
   }
 

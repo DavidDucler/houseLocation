@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-<mat-card style="height: 100%">
+<mat-card >
   <mat-card-header>
     <mat-card-title>Promotteur: {{house.agentName}}</mat-card-title>
     <mat-card-subtitle>{{house.agent}}</mat-card-subtitle>
@@ -38,33 +38,37 @@
     <div>
       <div class="description">
         <p>Chambres</p>
-        <p>{{house.houseDetail.numberOfRooms}}</p>
+        <p>{{house.numberOfRooms}}</p>
       </div>
       <div class="description">
         <p>Salon</p>
-        <p>{{house.houseDetail.numberOfLiveRooms}}</p>
+        <p>{{house.numberOfLiveRooms}}</p>
       </div>
       <div class="description">
         <p>Douche</p>
-        <p>{{house.houseDetail.numberOfShowers}}</p>
+        <p>{{house.numberOfShowers}}</p>
       </div>
       <div class="description">
         <p>Cuisine</p>
-        <p>{{house.houseDetail.numberOfKitchen}}</p>
+        <p>{{house.numberOfKitchen}}</p>
       </div>
       <div class="description">
         <p>Terrasse</p>
-        <p>{{house.houseDetail.numberOfTerrace}}</p>
+        <p>{{house.numberOfTerrace}}</p>
+      </div>
+      <div class="description">
+        <p>Salle à manger</p>
+        <p>{{house.numberOfDiningRoom}}</p>
       </div>
     </div>
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions align="end">
     <button color="primary" mat-button> <mat-icon>thumb_up_alt</mat-icon></button>
     <button color="warn" mat-button> <mat-icon>thumb_down_alt</mat-icon></button>
-    <button color="primary" mat-button align="end"> <mat-icon>share</mat-icon></button>
+    <button color="primary" mat-button> <mat-icon>sms</mat-icon></button>
   </mat-card-actions>
   <div class="footer">
-    <button mat-button >Visiter</button>
+    <button mat-button color="primary">Visiter</button>
   </div>
 </mat-card>
 </ion-content>

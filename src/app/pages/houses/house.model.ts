@@ -3,14 +3,12 @@ export class HouseModel {
     agentName: string;
     houseType: string;
     monthlyPrice:number;
-    houseDetail:{
-        numberOfRooms: number,
-        numberOfLiveRooms: number,
-        numberOfShowers : number,
-        numberOfKitchen :number,
-        numberOfDiningRoom:number,
-        numberOfTerrace:number
-    }
+    numberOfRooms: number;
+    numberOfLiveRooms: number;
+    numberOfShowers : number;
+    numberOfKitchen :number;
+    numberOfDiningRoom : number;
+    numberOfTerrace:number;
     houseDescription: string;
     houseCity: string;
     location:{

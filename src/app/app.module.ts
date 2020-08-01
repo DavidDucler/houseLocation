@@ -15,6 +15,9 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {IonicStorageModule} from "@ionic/storage";
 import {Geolocation} from "@ionic-native/geolocation/ngx";
 
+
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -24,7 +27,7 @@ import {Geolocation} from "@ionic-native/geolocation/ngx";
         name: '__houseDb1',
         driverOrder: ['indexeddb', 'sqlite', 'websql']
       }
-  )],
+  ),],
   providers: [
     StatusBar,
     SplashScreen,

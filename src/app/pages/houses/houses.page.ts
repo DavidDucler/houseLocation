@@ -12,6 +12,7 @@ import {NavController} from "@ionic/angular";
 export class HousesPage implements OnInit {
 houses: Array <HouseModel>;
 house:HouseModel;
+    isActive: false;
   constructor(private router: Router,
               private houseService: HouseService,
               private navController: NavController) { }
@@ -25,13 +26,13 @@ house:HouseModel;
   onNewHouse() {
     this.router.navigate(['/accueil/new-house']);
   }
-
   houseDetail(house:HouseModel) {
    let navigationExtras: NavigationExtras = {
       queryParams: {
-        house: JSON.stringify(house),
+        house: JSON.stringify(house)
       }
     };
+   console.log(house);
     this.navController.navigateForward('/accueil/house-detail',navigationExtras)
      //this.router.navigate(['/accueil/house-detail',house]);
     }

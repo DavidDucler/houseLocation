@@ -4,3 +4,16 @@
 .house{
   display: flex;
 }
+
+mat-form-field {
+    display: block;
+  width: auto;
+  }
+.mat{
+  width: 45%;
+}
+.mat-form{
+  display: flex;
+  align-content: space-evenly;
+  justify-content: center
+}

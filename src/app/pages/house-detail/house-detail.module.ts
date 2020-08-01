@@ -10,6 +10,7 @@ import { HouseDetailPage } from './house-detail.page';
 import {MaterialModule} from "../../material.module";
 import {MatDividerModule} from "@angular/material/divider";
 
+
 @NgModule({
     imports: [
         CommonModule,
@@ -17,7 +18,7 @@ import {MatDividerModule} from "@angular/material/divider";
         IonicModule,
         HouseDetailPageRoutingModule,
         MaterialModule,
-        MatDividerModule
+        MatDividerModule,
     ],
   declarations: [HouseDetailPage]
 })
