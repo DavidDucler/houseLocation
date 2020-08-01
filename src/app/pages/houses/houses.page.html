@@ -1,0 +1,36 @@
+<ion-header xmlns="http://www.w3.org/1999/html">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Maisons Disponibles</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onNewHouse()">
+        <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+      </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item *ngFor="let house of houses">
+    <mat-card >
+     <img src="assets/images/house.jpg">
+       <mat-card-header>
+           <mat-card-title>{{house.houseType}}</mat-card-title>
+           <p><strong>Prix Mensuel {{house.monthlyPrice}} FCFA </strong></p>
+         <mat-card-subtitle>
+             <h2><strong>{{house.houseCity}}</strong></h2>
+         </mat-card-subtitle>
+       </mat-card-header>
+      <mat-card-content>
+        <h2>{{house.houseDescription}}</h2>
+      <div class="ion-text-center">
+        <ion-button class="danger" (click)="houseDetail(house)"> Voir +</ion-button>
+      </div>
+      </mat-card-content>
+    </mat-card>
+  </ion-item>
+</ion-list>
+</ion-content>
