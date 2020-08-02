@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="841bcd0e-dfdb-462e-9064-f05ce4d8ce82" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../capacitor.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../capacitor.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/app/pages/accueil/accueil-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/pages/accueil/accueil-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/app/pages/house-detail/house-detail.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/pages/house-detail/house-detail.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/app/pages/house-detail/house-detail.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/pages/house-detail/house-detail.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/app/pages/houses/house.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/pages/houses/house.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/app/pages/houses/houses.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/pages/houses/houses.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/app/pages/new-house/new-house.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/pages/new-house/new-house.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/app/pages/new-house/new-house.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/pages/new-house/new-house.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/app/services/photo.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app/services/photo.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../tslint.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1fXsc8Y6hSTaVvwgl8f9QBmmUV1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="841bcd0e-dfdb-462e-9064-f05ce4d8ce82" name="Default Changelist" comment="" />
+      <created>1596375848574</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596375848574</updated>
+    </task>
+    <servers />
+  </component>
+</project>

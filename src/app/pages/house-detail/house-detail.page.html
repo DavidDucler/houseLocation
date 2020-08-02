@@ -13,7 +13,11 @@
     <mat-card-title>Promotteur: {{house.agentName}}</mat-card-title>
     <mat-card-subtitle>{{house.agent}}</mat-card-subtitle>
   </mat-card-header>
-  <img src="assets/images/house.jpg">
+  <ion-slides>
+    <ion-slide *ngFor="let photo of photos; index as position">
+      <ion-img src="{{ photo.webviewPath }}"></ion-img>
+    </ion-slide>
+  </ion-slides>
   <mat-card-content>
     <div style="margin-bottom: 20px">{{house.houseDescription}}</div>
     <mat-divider></mat-divider>

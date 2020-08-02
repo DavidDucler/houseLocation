@@ -41,8 +41,7 @@ export class NewHousePage implements OnInit {
                   private photoService:PhotoService) { }
                   myForm:FormGroup;
                   house:HouseModel;
-                  photo = this.photoService.photo;
-
+                  photos=this.photoService.photos;
   ngOnInit() {
     this.myForm = this.fb.group({
         agent:'',
@@ -59,7 +58,8 @@ export class NewHousePage implements OnInit {
         houseDescription:'',
 
     });
-    this.myForm.valueChanges.subscribe(console.log)
+    this.myForm.valueChanges.subscribe(console.log);
+    this.photoService.addNewToGallery();
   }
 
     onAddHouse(house:HouseModel) {
@@ -76,6 +76,6 @@ export class NewHousePage implements OnInit {
   }
 
     addPhotoToGallery() {
-       // this.photoService.addNewToGallery();
+       this.photoService.addNewToGallery();
     }
 }

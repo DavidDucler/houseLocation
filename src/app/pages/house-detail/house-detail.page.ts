@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HouseModel} from "../houses/house.model";
 import {ActivatedRoute} from "@angular/router";
+import {PhotoService} from "../../services/photo.service";
 
 
 
@@ -11,8 +12,8 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./house-detail.page.scss'],
 })
 export class HouseDetailPage implements OnInit {
-house:HouseModel;
-  constructor(private activatedRoute:ActivatedRoute,
+house:HouseModel;photos = this.photoService.photos;
+  constructor(private activatedRoute:ActivatedRoute,private photoService:PhotoService
              ) {}
 
   ngOnInit() {
@@ -24,10 +25,12 @@ house:HouseModel;
       }
       this.id = paramMap['id'];
     });*/
+      this.photoService.loadSaved();
    this.activatedRoute.queryParams.subscribe(params => {
       this.house = JSON.parse(params["house"]);
       console.log(this.house);
     });
+
   }
 
 }

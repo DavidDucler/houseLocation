@@ -1,20 +1,26 @@
-export class HouseModel {
+ export interface HouseModel {
+    key: number;
     agent: string;
     agentName: string;
     houseType: string;
-    monthlyPrice:number;
+    monthlyPrice: number;
     numberOfRooms: number;
     numberOfLiveRooms: number;
-    numberOfShowers : number;
-    numberOfKitchen :number;
-    numberOfDiningRoom : number;
-    numberOfTerrace:number;
+    numberOfShowers: number;
+    numberOfKitchen: number;
+    numberOfDiningRoom: number;
+    numberOfTerrace: number
     houseDescription: string;
     houseCity: string;
-    location:{
+    location: {
         longitude: number,
-        latitude: number
-    }
+        latitude: number,
+    };
 
 
+}
+interface Photo {
+    filepath: string;
+    webviewPath: string;
+    base64?: string;
 }
